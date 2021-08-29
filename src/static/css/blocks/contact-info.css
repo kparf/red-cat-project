@@ -1,0 +1,9 @@
+.contact-info {
+    background-color: var(--bg-color);
+    padding: var(--page-indent);
+    color: var(--second-text-color)
+}
+
+.contact-info .contact-info__phone {
+    margin-right: 1em;
+}

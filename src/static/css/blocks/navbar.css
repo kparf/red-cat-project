@@ -1,0 +1,34 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bg-color);
+    padding: var(--page-indent);
+}
+
+.navbar__logo {
+    width: 16vw;
+    height: auto;
+}
+
+.menu__list {
+    display: flex;
+    list-style-type: none;
+}
+
+.menu__item {
+    min-width: 10vw;
+    text-align: center;
+}
+
+.menu__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    padding-right: 0.5em;
+    color: var(--second-text-color);
+    transition: 0.3s color;
+}
+
+.menu__link:focus, .menu__link:hover {
+    color: var(--accent-color)
+}

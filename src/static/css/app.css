@@ -1,0 +1,9 @@
+@import 'blocks/navbar.css';
+@import 'blocks/contact-info.css';
+@import 'colors.css';
+@import 'variable.css';
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+}

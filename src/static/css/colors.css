@@ -1,0 +1,6 @@
+:root {
+    --accent-color: hsl(354, 84.2%, 34.7%);
+    --second-text-color: hsl(0, 0%, 85%);
+    --main-text-color: black;
+    --bg-color: hsl(0, 0%, 4.7%);
+}
