@@ -1,3 +1,11 @@
+{% set css %}
+    {% include "./contact-info.css" %}
+{% endset %}
+<style>
+  {{ css | cssmin | safe }}
+</style>
+
+
 <div class="contact-info">
     <span class="contact-info__phone">{{ settings.phone }}</span>
     <span class="contact-info__email">{{ settings.email }}</span>

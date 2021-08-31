@@ -17,14 +17,12 @@
     {% endif %}
   </head>
   <body>
-    {% include "./partials/contact-info.njk" %}
-    {% include "./partials/navbar.njk" %}
+    {% include "./partials/contact-info/contact-info.njk" %}
+    {% include "./partials/header/header.njk" %}
 
     {{ content | safe }}
 
     {% include "./partials/footer.html" %}
-
-    <script src="/static/js/alpine.js"></script>
 
     {% if path == "home" %}
       <!-- Netlify Identity Widget -->

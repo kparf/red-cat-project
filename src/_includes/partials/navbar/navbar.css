@@ -1,17 +1,17 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    background-color: var(--bg-color);
     padding: var(--page-indent);
 }
 
 .navbar__logo {
-    width: 16vw;
+    width: max(16vw, var(--logo-min-size));
     height: auto;
 }
 
 .menu__list {
     display: flex;
+    align-items: center;
     list-style-type: none;
 }
 

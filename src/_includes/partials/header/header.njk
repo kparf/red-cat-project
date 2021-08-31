@@ -1,0 +1,10 @@
+{% set css %}
+    {% include "./header.css" %}
+{% endset %}
+<style>
+  {{ css | cssmin | safe }}
+</style>
+
+<div class="header">
+    {% include "../navbar/navbar.njk" %}
+</div>

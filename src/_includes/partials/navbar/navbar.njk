@@ -1,5 +1,14 @@
+{% set css %}
+    {% include "./navbar.css" %}
+{% endset %}
+<style>
+  {{ css | cssmin | safe }}
+</style>
+
+
 <nav class="navbar">
     <img class="navbar__logo" src="/static/img/logo-red1.png" />
+
     {% if navigation.items %}
         <ul class="menu__list">
         {% for item in navigation.items%}
