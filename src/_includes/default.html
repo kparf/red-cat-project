@@ -1,3 +1,6 @@
+{% set css %}
+    {% include "./default.css" %}
+{% endset %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,20 +18,25 @@
     {% if prism == true %}
       <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css">
     {% endif %}
+    <style>
+      {{ css | cssmin | safe }}
+    </style>
   </head>
-  <body>
+  <body class="default">
     {% include "./partials/contact-info/contact-info.njk" %}
-    {% include "./partials/header/header.njk" %}
 
-    {{ content | safe }}
-
-    {% include "./partials/footer.html" %}
+    <div class="default__content">
+      {% include "./partials/navbar/navbar.njk" %}
+      <main class="default__main">
+        {{ content | safe }}
+      </main>
+      {% include "./partials/footer/footer.njk" %}
+    </div>
 
     {% if path == "home" %}
       <!-- Netlify Identity Widget -->
       <!-- Needed only if you are using Netlify Identity feature -->
       <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     {% endif %}
-
   </body>
 </html>
