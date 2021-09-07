@@ -5,7 +5,7 @@ path: home
 ---
 
 <div class="main">
-    {%- for item in collections.main -%}
+    {%- for item in collections.main|sort(false, true, 'data.order') -%}
         {{ item.templateContent | safe }}
     {%- endfor -%}
 <div>

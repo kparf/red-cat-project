@@ -1,0 +1,29 @@
+---
+tags: "main"
+order: 0
+---
+{% set css %}
+    {% include "./head.css" %}
+    {% include "./main.css" %}
+{% endset %}
+<style>
+  {{ css | cssmin | safe }}
+</style>
+
+<div class="main-head">
+    <div class="main__content-wrapper main-head__wrapper">
+        <div class="main-head__title">
+        Вы готовы к танцам?
+        </div>
+        <div class="main-head__subtitle">
+            9-й Республиканский конкурс современного танца
+        </div>
+        <div class="main-head__date">
+            10 октября 2021 года
+        </div>
+        <div class="main-head__links">
+            <a href="#">Подать заявку</a>
+            <a href="#">Положение</a>
+        </div>
+    </div>
+</div>
