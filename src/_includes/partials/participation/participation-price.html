@@ -1,0 +1,20 @@
+{% macro participationPrice(participation) %}
+
+  {% set css %}
+      {% include "./participation-price.css" %}
+  {% endset %}
+  <style>
+    {{ css | cssmin | safe }}
+  </style>
+
+  <div class="participation-price">
+    <h3 class="participation-price__title">{{ participation.title }}</h3>
+    <div class="participation-price__content">
+      {{ participation.textBefore }}
+      <div class="participation-price__price">
+        {{ participation.price }}
+      </div>
+      {{ participation.textAfter }}
+    </div>
+  </div>
+{% endmacro %}

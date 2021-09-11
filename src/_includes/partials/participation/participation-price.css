@@ -1,0 +1,24 @@
+.participation-price {
+  background-color: hsl(213, 7%, 10%);
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.participation-price__title {
+  display: block;
+  padding: 1em;
+  margin: 0;
+}
+
+.participation-price__content {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.participation-price__price {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0.5em 0;
+  color: var(--accent-color);
+}

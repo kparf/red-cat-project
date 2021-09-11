@@ -1,0 +1,40 @@
+---
+title: "Взносы за участие"
+tags: "main"
+order: 7
+participations:
+  -
+    title: "Соло/Дуэт"
+    price: "55/45 BYN"
+    textAfter: "С каждого участника за номер"
+  -
+    title: "Группа"
+    price: "25 BYN"
+    textAfter: "С каждого участника за номер"
+  -
+    title: "Скидка"
+    price: "20 BYN"
+    textBefore: "3 номера и более от коллектива"
+    textAfter: "С каждого участника за номер. Кроме СОЛО/ДУЭТ"
+  -
+    title: "Импровизация"
+    price: "35 BYN"
+    textBefore: "Соло"
+---
+{% from "../_includes/partials/participation/participation-price.html" import participationPrice with context %}
+{% set css %}
+    {% include "./participation.css" %}
+    {% include "./main.css" %}
+{% endset %}
+<style>
+  {{ css | cssmin | safe }}
+</style>
+
+<div class="participation">
+    <h2>{{ title }}</h2>
+    <section class="main__content-wrapper participation__content">
+      {% for participation in participations %}
+        {{ participationPrice(participation) }}
+      {% endfor %}
+    </section>
+</div>
