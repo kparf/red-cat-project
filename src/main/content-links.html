@@ -1,8 +1,38 @@
 ---
 tags: "main"
 order: 1
+links:
+    - name: "Фото"
+      ref: "#"
+    - name: "Отзывы"
+      ref: "#"
+    - name: "Номинации"
+      ref: "#"
+    - name: "Фзносы за участие"
+      ref: "#"
+    - name: "Билеты для зрителей"
+      ref: "#"
+    - name: "Помошь Животным"
+      ref: "#"
 ---
+{% set css %}
+    {% include "./content-links.css" %}
+    {% include "./main.css" %}
+{% endset %}
+<style>
+  {{ css | cssmin | safe }}
+</style>
+
 
 <div class="main-content-links">
-    Context-links
+    <ul class="main-content-links__list main__content-wrapper">
+        {%- for link in links -%}
+            <li class="main-content-links__item">
+                <a class="link-box" href="{{link.ref}}">
+                    <span class="link-box__index">{{ loop.index }}</span>
+                    {{link.name}}
+                </a>
+            </li>
+        {%- endfor -%}
+    </ul>
 </div>

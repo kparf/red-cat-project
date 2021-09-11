@@ -1,8 +1,41 @@
 ---
+title: Подробнее о конкурсе
+details_date: 10 октября 2021 года
 tags: "main"
 order: 2
 ---
 
-<div class="main-content-links">
-    details
+{% set css %}
+    {% include "./details.css" %}
+    {% include "./main.css" %}
+{% endset %}
+<style>
+  {{ css | cssmin | safe }}
+</style>
+
+<h2 class="details__title">{{ title }}</h2>
+
+<div class="details">
+    <section class="main__content-wrapper">
+        <div class="details__subsection details__date">{{ details_date }}</div>
+        <div class="details__subsection details__subsection-1">
+            <ul>
+                <li>участники со всей Беларуси (от 3-х лет);</li>
+                <li>сценическая площадка для выступлений с профессиональным светом, звуком и танцевальным покрытием, расположена в историческом центре города;</li>
+                <li>конкурсные номера оценивают лучшие хореографы Беларуси, сертифицированные судьи («круглый стол» после каждого отделения);</li>
+                <li>все участники получают медали и дипломы;</li>
+                <li>на конкурсе работает профессиональный фотограф и видеооператор.</li>
+            </ul>
+        </div>
+        <div class="details__subsection details__subsection-2">
+            <p>
+                Организатор:
+                Индивидуальный предприниматель Короткая Екатерина Викторовна, действующая на основании Свидетельства о регистрации, УНП 491411295
+            <p>
+            <p>
+                Место проведения:
+                Республика Беларусь, город Гомель, улица Ирининская, 16. Городской центр культуры
+            <p>
+        </div>
+    </section>
 </div>
