@@ -1,5 +1,5 @@
 .participation-price {
-  background-color: hsl(213, 7%, 10%);
+  background-color: var(--bg-color);
   border-radius: 1em;
   overflow: hidden;
 }

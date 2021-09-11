@@ -1,0 +1,11 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--bg-color);
+    padding: var(--page-indent);
+    color: var(--second-text-color);
+
+    margin-top: var(--page-indent);
+}
