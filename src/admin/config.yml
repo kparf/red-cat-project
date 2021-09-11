@@ -30,6 +30,20 @@ collections:
         multiple: true
         create: true
         options: ["Tags", "created", "from", "config.yml"]
+  - label: "Main"
+    name: "main"
+    editor:
+      preview: false
+    files:
+      - label: "Details"
+        name: "details"
+        file: "src/main/details.yaml"
+        fields:
+          - { label: "Title", name: "title", widget: string }
+          - { label: "Date", name: "details_date", widget: string }
+          - { label: "Order", name: "order", widget: string }
+          - { label: "Subsection 1", name: "subsection1", widget: markdown }
+          - { label: "Subsection 1", name: "subsection2", widget: markdown }
   - label: "Settings"
     name: "settings"
     editor:

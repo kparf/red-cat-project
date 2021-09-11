@@ -3,6 +3,7 @@ const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
 const CleanCSS = require("clean-css");
+const MarkdownIt = require("markdown-it");
 
 module.exports = function (eleventyConfig) {
   // Disable automatic use of your .gitignore
@@ -20,6 +21,15 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("cssmin", (code) => {
     return new CleanCSS({}).minify(code).styles;
+  })
+
+  eleventyConfig.addFilter("markdown", (md) => {
+    console.debug("md:", md)
+    return new MarkdownIt({
+      typographer: true,
+      breaks: true,
+      html: true,
+    }).render(md);
   })
 
   // Syntax Highlighting for Code blocks
