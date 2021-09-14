@@ -46,6 +46,11 @@ module.exports = function (eleventyConfig) {
     "./src/admin/config.yml": "./admin/config.yml",
   });
 
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/lite-youtube-embed/src/lite-yt-embed.css": "./static/css/lite-yt-embed.css",
+    "node_modules/lite-youtube-embed/src/lite-yt-embed.js": "./static/js/lite-yt-embed.js",
+  });
+
   // Copy Image Folder to /_site
   eleventyConfig.addPassthroughCopy("./src/static/img");
 

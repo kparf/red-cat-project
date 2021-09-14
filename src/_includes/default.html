@@ -21,6 +21,8 @@
     <style>
       {{ css | cssmin | safe }}
     </style>
+    <link rel="stylesheet" type="text/css" href="/static/css/lite-yt-embed.css"/>
+
   </head>
   <body class="default">
     {% include "./partials/contact-info/contact-info.njk" %}
@@ -38,5 +40,6 @@
       <!-- Needed only if you are using Netlify Identity feature -->
       <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     {% endif %}
+    <script type="text/javascript" src="/static/js/lite-yt-embed.js"></script>
   </body>
 </html>
