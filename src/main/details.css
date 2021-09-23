@@ -12,6 +12,33 @@
     padding: var(--page-indent);
 }
 
+.details__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "video text"
+        "video text";
+    gap: var(--page-indent);
+}
+
+@media (max-width: 1070px) {
+    .details__content {
+       grid-template-columns: 1fr;
+       grid-template-areas:
+       "video"
+       "text";
+    }
+}
+
+.details__video {
+    grid-area: video;
+    max-width: unset;
+}
+
+.details__text {
+    grid-area: text;
+}
+
 .details__title {
     text-align: center;
     margin-top: 4vw;

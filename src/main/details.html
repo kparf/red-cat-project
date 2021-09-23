@@ -13,14 +13,17 @@ tags: "main"
 <h2 class="details__title">{{ title }}</h2>
 
 <div class="details">
-    <section class="main__content-wrapper">
-        <div class="details__subsection details__date">{{ details_date }}</div>
-        <div class="details__subsection details__subsection-1">
-            {{ subsection1 | markdown | safe }}
+    <section class="main__content-wrapper details__content">
+        <lite-youtube class="details__video" videoid="{{video}}" playlabel="{{video_playlabel}}"></lite-youtube>
+
+        <div class="details__text">
+            <div class="details__subsection details__date">{{ details_date }}</div>
+            <div class="details__subsection details__subsection-1">
+                {{ subsection1 | markdown | safe }}
+            </div>
+            <div class="details__subsection details__subsection-2">
+                {{ subsection2 | markdown | safe }}
+            </div>
         </div>
-        <div class="details__subsection details__subsection-2">
-            {{ subsection2 | markdown | safe }}
-        </div>
-        <lite-youtube videoid="ogfYd705cRs" playlabel="Play: Keynote (Google I/O '18)"></lite-youtube>
     </section>
 </div>
