@@ -4,6 +4,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
 const CleanCSS = require("clean-css");
 const MarkdownIt = require("markdown-it");
+const { webpack } = require("./src/shortcodes/webpack")
 
 module.exports = function (eleventyConfig) {
   // Disable automatic use of your .gitignore
@@ -48,8 +49,9 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({
     "node_modules/lite-youtube-embed/src/lite-yt-embed.css": "./static/css/lite-yt-embed.css",
-    "node_modules/lite-youtube-embed/src/lite-yt-embed.js": "./static/js/lite-yt-embed.js",
   });
+
+  eleventyConfig.addNunjucksAsyncShortcode('webpack', webpack);
 
   // Copy Image Folder to /_site
   eleventyConfig.addPassthroughCopy("./src/static/img");

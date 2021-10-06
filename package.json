@@ -1,18 +1,24 @@
 {
   "scripts": {
-    "start": "npm-run-all --parallel css eleventy browsersync",
-    "eleventy": "eleventy --watch",
+    "clean": "rimraf _site",
+    "start": "npm-run-all --parallel clean css start:* browsersync",
+    "start:webpack": "webpack --watch",
+    "start:eleventy": "eleventy --watch",
     "debug": "set DEBUG=* & eleventy",
     "css": "postcss src/static/css/app.css --o _site/static/css/style.css --watch",
-    "build": "cross-env NODE_ENV=production eleventy && cross-env NODE_ENV=production postcss src/static/css/app.css --o _site/static/css/style.css",
+    "build": "cross-env NODE_ENV=production npm-run-all -l clean build:*",
+    "build:webpack": "webpack",
+    "build:eleventy": "eleventy",
+    "buildold": "cross-env NODE_ENV=production eleventy && cross-env NODE_ENV=production postcss src/static/css/app.css --o _site/static/css/style.css",
     "browsersync": "browser-sync start --server '_site' --files '_site' --port 8080 --no-notify --no-open"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "alpinejs": "^2.6.0",
+    "babel-loader": "^8.2.2",
     "browser-sync": "^2.26.14",
-    "cross-env": "^7.0.2",
+    "cross-env": "^7.0.3",
     "cssnano": "^4.1.10",
     "gulp": "^4.0.2",
     "html-minifier": "^4.0.0",
@@ -21,11 +27,16 @@
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.2",
-    "prismjs": "^1.21.0"
+    "prismjs": "^1.21.0",
+    "rimraf": "^3.0.2",
+    "webpack": "^5.57.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-manifest-plugin": "^4.0.2"
   },
   "dependencies": {
     "autoprefixer": "^10.1.0",
     "clean-css": "^5.1.5",
+    "lit": "^2.0.0",
     "lite-youtube-embed": "^0.2.0",
     "markdown-it": "^12.2.0",
     "postcss": "^8.2.1"
