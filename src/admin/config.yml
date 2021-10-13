@@ -46,6 +46,12 @@ collections:
           - { label: "Subsection 1", name: "subsection2", widget: markdown }
           - { label: "Video", name: "video", widget: string }
           - { label: "Video Playlabel", name: video_playlabel, widget: string }
+          - label: "Image Carusel"
+            name: images
+            widget: image
+            media_library:
+              config:
+                multiple: true
   - label: "Settings"
     name: "settings"
     editor:
