@@ -47,11 +47,10 @@ collections:
           - { label: "Video", name: "video", widget: string }
           - { label: "Video Playlabel", name: video_playlabel, widget: string }
           - label: "Image Carusel"
-            name: images
-            widget: image
-            media_library:
-              config:
-                multiple: true
+            name: carusel
+            widget: list
+            summary: '{{fields.image}}'
+            field: { labe: Image, name: "image", widget: "image" }
   - label: "Settings"
     name: "settings"
     editor:

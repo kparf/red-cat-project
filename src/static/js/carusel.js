@@ -3,7 +3,9 @@ import { html, css, LitElement } from "lit"
 export class Carusel extends LitElement {
 
     static properties = {
-        text: {},
+        images: {
+          type: Array
+        },
     };
 
     static styles = css`p {
@@ -12,13 +14,16 @@ export class Carusel extends LitElement {
 
     constructor() {
         super()
+        this.images = []
     }
 
     render() {
         return html`
-            <p>
-                Hello, ${this.text}
-            </p>
+            <ul>
+              ${this.images.map(image =>
+                html`<li><img src=${image}/></li>`
+              )}
+            </ul>
         `
     }
 }

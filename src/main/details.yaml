@@ -19,4 +19,8 @@ subsection2: >-
   **Место проведения**: Республика Беларусь, город Гомель, улица Ирининская, 16. Городской центр культуры
 video: SRX3tVzgvCQ
 video_playlabel: Конкурс танца - RED CAT
-images: /static/img/photo_2021-04-07_20-29-35-520x330.jpg
+carusel:
+  - /static/img/photo_2021-04-07_20-29-35-520x330.jpg
+  - /static/img/photo_2021-04-07_20-29-37-520x330.jpg
+  - /static/img/photo_2021-04-07_20-29-33-520x330.jpg
+  - /static/img/gallery-2-520x330.jpg
