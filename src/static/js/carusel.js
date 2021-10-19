@@ -12,6 +12,50 @@ export class Carusel extends LitElement {
 
   static styles = css`
 
+    :host {
+      position: relative;
+      --red-caruse-arrow-size: 24px;
+      padding-left: calc(var(--red-caruse-arrow-size) + 1rem);
+      padding-right: calc(var(--red-caruse-arrow-size) + 1rem);
+    }
+    .red-carusel__controls {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .red-carusel__button {
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+    .red-carusel__button:disabled {
+      display: none;
+    }
+
+    .button-wrapper {
+      position: absolute;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      padding: 0.5rem;
+    }
+    .button-wrapper.next {
+      right: 0;
+    }
+
+    .button-wrapper.previous {
+      left: 0;
+    }
+
+    .red-carusel__button-icon {
+      width: var(--red-caruse-arrow-size);
+      height: 100%;
+      fill: var(--red-caruse-arrow-color, white);
+    }
+
     .red-carusel {
       position: relative;
     }
@@ -47,7 +91,7 @@ export class Carusel extends LitElement {
       height: 100%;
       overflow-x: auto;
       scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
+      scroll-snap-type: x;
       scrollbar-width: none;
     }
 
@@ -83,21 +127,20 @@ export class Carusel extends LitElement {
 
   debounced = undefined
   _scrollHandler() {
-
     this._disableButtons()
   }
 
   _previousHandler() {
     const $scrollableContainer = this.scrollableContainer.value
     if ($scrollableContainer) {
-      $scrollableContainer.scrollBy(-$scrollableContainer.offsetWidth / 2, 0)
+      $scrollableContainer.scrollBy(-$scrollableContainer.offsetWidth, 0)
     }
   }
 
   _nextHandler() {
     const $scrollableContainer = this.scrollableContainer.value
     if ($scrollableContainer) {
-      $scrollableContainer.scrollBy($scrollableContainer.offsetWidth / 2, 0)
+      $scrollableContainer.scrollBy($scrollableContainer.offsetWidth, 0)
     }
   }
 
@@ -109,21 +152,31 @@ export class Carusel extends LitElement {
             height: 0;
           }
         </style>
-        <ul aria-label="gallery controls">
-          <li>
+        <ul ${ref(this._disableButtons)} class="red-carusel__controls" aria-label="gallery controls">
+          <li class="button-wrapper previous">
             <button
+              aria-label="previous"
+              class="red-carusel__button"
               @click="${this._previousHandler}"
               ${ref(this.previousButton)}
+              disabled
             >
-              Previous
+              <svg aria-hidden="true" viewBox="0 0 96 96" class="red-carusel__button-icon">
+                <path transform="rotate(90 48 48)" d="M81.8457,25.3876a6.0239,6.0239,0,0,0-8.45.7676L48,56.6257l-25.396-30.47a5.999,5.999,0,1,0-9.2114,7.6879L43.3943,69.8452a5.9969,5.9969,0,0,0,9.2114,0L82.6074,33.8431A6.0076,6.0076,0,0,0,81.8457,25.3876Z" />
+              </svg>
             </button>
           </li>
-          <li>
+          <li class="button-wrapper next">
             <button
+              aria-label="next"
+              class="red-carusel__button"
               @click="${this._nextHandler}"
               ${ref(this.nextButton)}
+              disabled
             >
-              Next
+              <svg aria-hidden="true" viewBox="0 0 96 96" class="red-carusel__button-icon">
+                <path transform="rotate(-90 48 48)" d="M81.8457,25.3876a6.0239,6.0239,0,0,0-8.45.7676L48,56.6257l-25.396-30.47a5.999,5.999,0,1,0-9.2114,7.6879L43.3943,69.8452a5.9969,5.9969,0,0,0,9.2114,0L82.6074,33.8431A6.0076,6.0076,0,0,0,81.8457,25.3876Z" />
+              </svg>
             </button>
           </li>
         </ul>

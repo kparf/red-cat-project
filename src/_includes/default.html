@@ -34,12 +34,6 @@
       </main>
       {% include "./partials/footer/footer.njk" %}
     </div>
-
-    {% if path == "home" %}
-      <!-- Netlify Identity Widget -->
-      <!-- Needed only if you are using Netlify Identity feature -->
-      <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    {% endif %}
     <script async defer src="{% webpack 'js/main.js' %}"></script>
   </body>
 </html>
