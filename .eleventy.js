@@ -25,7 +25,6 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addFilter("markdown", (md) => {
-    console.debug("md:", md)
     return new MarkdownIt({
       typographer: true,
       breaks: true,

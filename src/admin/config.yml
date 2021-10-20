@@ -51,6 +51,17 @@ collections:
             widget: list
             summary: '{{fields.image}}'
             field: { labe: Image, name: "image", widget: "image" }
+      - label: "Nominations"
+        name: "nominations"
+        file: "src/main/nominations.yaml"
+        fields:
+          - label: "Nomination tabs"
+            name: tabs
+            widget: list
+            summary: '{{fields.name}}'
+            fields:
+              - {labe: Name, name: "name", widget: "string" }
+              - {labe: Description, name: "description", widget: "markdown" }
   - label: "Settings"
     name: "settings"
     editor:
