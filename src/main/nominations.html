@@ -2,9 +2,16 @@
 tags: "main"
 order: 4
 ---
+{% set css %}
+    {% include "./nominations.css" %}
+    {% include "./main.css" %}
+{% endset %}
+<style>
+  {{ css | cssmin | safe }}
+</style>
 
 <div class="main-content-links">
-      <section class="main__content-wrapper details__content">
-        <red-tabs items="{{ tabs | dump }}"></red-tabs>
+    <section class="main__content-wrapper nominations">
+      <red-tabs items="{{ tabs | dump }}"></red-tabs>
     </section>
 </div>

@@ -1,0 +1,4 @@
+
+.nominations {
+  --red-tabs-accent-color: var(--accent-color, red);
+}

@@ -2,7 +2,7 @@
     {% include "./default.css" %}
 {% endset %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
@@ -22,7 +22,7 @@
       {{ css | cssmin | safe }}
     </style>
     <link rel="stylesheet" type="text/css" href="/static/css/lite-yt-embed.css"/>
-
+    <script async defer src="{% webpack 'js/main.js' %}"></script>
   </head>
   <body class="default">
     {% include "./partials/contact-info/contact-info.njk" %}
@@ -34,6 +34,5 @@
       </main>
       {% include "./partials/footer/footer.njk" %}
     </div>
-    <script async defer src="{% webpack 'js/main.js' %}"></script>
   </body>
 </html>
