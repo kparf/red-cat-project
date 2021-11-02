@@ -13,5 +13,15 @@ order: 4
 <div class="main-content-links">
     <section class="main__content-wrapper nominations">
       <red-tabs items="{{ tabs | dump }}"></red-tabs>
+      <div>
+        {%- for tab in tabs-%}
+          <red-disclosure open>
+            <h2 slot="header" id="disclosure-header-{{loop.index}}">{{tab.name}}</h2>
+            <div slot="content" id="disclosure-content-{{loop.index}}">
+              {{ tab.description | markdown | safe }}
+            </div>
+          </red-disclosure>
+        {%- endfor -%}
+      </div>
     </section>
 </div>

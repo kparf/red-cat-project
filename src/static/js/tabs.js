@@ -14,7 +14,7 @@ export class Tabs extends LitElement {
     super()
     this.items = []
     this._selected = 0
-}
+  }
 
   static properties = {
     items: { type: Array },
@@ -22,9 +22,6 @@ export class Tabs extends LitElement {
   };
 
   static styles = css`
-    :host {
-    }
-
     .tab {
       display: block;
       text-decoration: none;
@@ -78,7 +75,6 @@ export class Tabs extends LitElement {
 
   focusTabpanel(selected) {
     const tabpanel = this._tabpanelRef.value
-    console.log(tabpanel)
     if (selected !== undefined && tabpanel) {
       tabpanel.focus()
     }
